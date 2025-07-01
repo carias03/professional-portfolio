@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to left top,
+    #b4e1d2,
+    #9ed7d3,
+    #8bccd5,
+    #7fc0d6,
+    #7cb2d5,
+    #87acd8,
+    #97a6d8,
+    #a89ed3,
+    #c39dd0,
+    #dc9cc8,
+    #f09dbc,
+    #fea1ac
+  );
+}
+
+@media (min-width: 768px) {
+  .logo__image {
+    width: 600px;
+    height: 600px;
+  }
+}
