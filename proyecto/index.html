@@ -3,22 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="assets/caro-arias-favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="styles.css" />
     <title>Caro Arias</title>
   </head>
   <body>
     <div class="above-fold">
       <nav class="navbar">
-        <div
-          class="container-md d-flex justify-content-between align-items-center"
-        >
+        <div class="navbar__container container">
           <img
             class="navbar__logo"
             src="assets/caro-arias-logo.svg"
@@ -29,25 +33,43 @@
         </div>
       </nav>
       <main class="hero">
-        <div class="hero__background"></div>
-        <div class="hero__wrapper container-lg">
-          <div class="hero__content">
-            <header class="hero__header">
-              <h1 class="h1 mb-3" data-content="headline">
-                Who's calling or texting?
-              </h1>
-              <p class="hero__subheading" data-content="subheading">
-                Start by searching for the number and get ready to see the
-                available results!
-              </p>
-            </header>
-            <div class="hint">
-              <p class="hint__text">
-                <span class="hint__label">Hint: </span>
-                Search
-                <span class="text-uppercase">any</span>
-                phone #, your significant other, or a mysterious caller…
-              </p>
+        <div class="hero__container container">
+          <div class="row flex-grow-1">
+            <div class="col-lg-6">
+              <div class="hero__content">
+                <h1 class="hero__headline">¡Hola! Soy Caro Arias</h1>
+                <h2 class="hero__subheadline">
+                  <span class="js-hero-subheadline">
+                    Desarrolladora Front-End
+                  </span>
+                  <span class="js-hero-subheadline">
+                    Diseñadora de experiencias
+                  </span>
+                  <span class="js-hero-subheadline">
+                    Creadora visual y funcional
+                  </span>
+                  <span class="js-hero-subheadline">
+                    Apasionada por el detalle
+                  </span>
+                </h2>
+                <p class="hero__text">
+                  Con una base sólida en ingeniería del software y una mirada
+                  analítica forjada en la ciencia, transformo ideas en
+                  interfaces funcionales, accesibles y visualmente atractivas.
+                  Mi enfoque combina creatividad, detalle y empatía para aportar
+                  soluciones web centradas en el usuario.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-end align-items-lg-center">
+              <div class="hero__graphics">
+                <img
+                  class="hero__image"
+                  src="assets/hero-image.png"
+                  alt=""
+                  role="presentation"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -193,5 +215,6 @@
   </body>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
   <script src="script.js"></script>
 </html>

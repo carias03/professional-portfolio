@@ -1,19 +1,74 @@
-// --- productDemos.js ---
-// Assumes gsap and ScrollTrigger are loaded globally
+function textAnimation() {
+  gsap.registerPlugin(TextPlugin);
+  const contentElements = document.querySelectorAll(".js-hero-subheadline");
+  const durationPerLetter = 0.07;
+  const pauseAfterWrite = 2;
+  const pauseAfterErase = 0.2;
+  const timeline = gsap.timeline({ repeat: -1 });
+
+  contentElements.forEach((el) => {
+    const fullText = el.innerHTML.trim();
+    el.innerHTML = "";
+
+    const writeDuration = Math.max(fullText.length * durationPerLetter, 0.5);
+    const eraseDuration = Math.max(
+      fullText.length * durationPerLetter * 0.8,
+      0.3
+    );
+
+    timeline.call(
+      () => {
+        contentElements.forEach((e) => e.classList.remove("typing"));
+        el.classList.add("typing");
+      },
+      null,
+      "+=0"
+    );
+
+    // Animación de escritura
+    timeline.to(el, {
+      text: fullText,
+      duration: writeDuration,
+      ease: "none",
+    });
+
+    // Pausa después de escribir
+    timeline.to({}, { duration: pauseAfterWrite });
+
+    // Animación de borrado que simula backspace
+    timeline.to(
+      { progress: 1 },
+      {
+        progress: 0,
+        duration: eraseDuration,
+        ease: "none",
+        onUpdate: function () {
+          const p = this.targets()[0].progress;
+          const charsToShow = Math.floor(fullText.length * p);
+          el.innerHTML = fullText.slice(0, charsToShow);
+        },
+      }
+    );
+
+    // Pausa después de borrar
+    timeline.to({}, { duration: pauseAfterErase });
+  });
+}
+
 const DISTANCE_PER_ELEMENT = 800;
 function getDemoElements() {
   return {
-    possibleOwnerScrollableText: window.gsap.utils.toArray(
+    possibleOwnerScrollableText: gsap.utils.toArray(
       document.querySelector(".js-possible-owner-scroll").children
     ),
-    fraudScanScrollableText: window.gsap.utils.toArray(
+    fraudScanScrollableText: gsap.utils.toArray(
       document.querySelector(".js-fraud-scan-scroll").children
     ),
     demos: document.querySelector(".js-demos"),
   };
 }
 function __initSectionScrollTrigger(animation, elementsLength) {
-  window.ScrollTrigger.create({
+  ScrollTrigger.create({
     animation: animation,
     trigger: ".js-demos",
     pin: ".js-demos",
@@ -25,7 +80,7 @@ function __initSectionScrollTrigger(animation, elementsLength) {
   });
 }
 function __animationScrollTrigger(animation, distance, demos) {
-  window.ScrollTrigger.create({
+  ScrollTrigger.create({
     trigger: demos,
     animation: animation,
     start: "top center",
@@ -50,7 +105,7 @@ function __initSectionScrollAnimation() {
   const elementsLength =
     elements.possibleOwnerScrollableText.length +
     elements.fraudScanScrollableText.length;
-  const timeline = window.gsap.timeline();
+  const timeline = gsap.timeline();
   timeline.set(demosContainer, { height: "auto" });
   __generateStepsAnimation(timeline, elements.possibleOwnerScrollableText);
   timeline
@@ -87,6 +142,7 @@ function initProductDemos() {
 
 // --- Main init function ---
 function initAll() {
+  textAnimation();
   initProductDemos();
 }
 
