@@ -56,6 +56,7 @@ function textAnimation() {
 }
 
 const DISTANCE_PER_ELEMENT = 800;
+
 function getDemoElements() {
   return {
     possibleOwnerScrollableText: gsap.utils.toArray(
@@ -67,6 +68,7 @@ function getDemoElements() {
     demos: document.querySelector(".js-demos"),
   };
 }
+
 function __initSectionScrollTrigger(animation, elementsLength) {
   ScrollTrigger.create({
     animation: animation,
@@ -79,6 +81,7 @@ function __initSectionScrollTrigger(animation, elementsLength) {
     anticipatePin: 1,
   });
 }
+
 function __animationScrollTrigger(animation, distance, demos) {
   ScrollTrigger.create({
     trigger: demos,

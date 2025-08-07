@@ -32,7 +32,8 @@
           />
         </div>
       </nav>
-      <main class="hero">
+      <!-- HERO SECTION -->
+      <section class="hero">
         <div class="hero__container container">
           <div class="row flex-grow-1">
             <div class="col-lg-6">
@@ -73,15 +74,195 @@
             </div>
           </div>
         </div>
-      </main>
+        <div class="hero__arc-container">
+          <div class="hero__arc hero__arc--upper"></div>
+          <div class="hero__arc hero__arc--lower"></div>
+        </div>
+      </section>
     </div>
-    <section class="js-demos section">
+    <!-- PROJECTS SECTION -->
+    <section class="projects">
+      <h2 class="projects__headline">Lo que he creado</h2>
+      <div
+        id="projects-carousel"
+        class="carousel slide h-100"
+        data-bs-interval="false"
+      >
+        <div class="carousel-indicators">
+          <button
+            class="carousel-indicator active"
+            type="button"
+            data-bs-target="#projects-carousel"
+            data-bs-slide-to="0"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            class="carousel-indicator"
+            type="button"
+            data-bs-target="#projects-carousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            class="carousel-indicator"
+            type="button"
+            data-bs-target="#projects-carousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner h-100">
+          <!-- HIVEFIT -->
+          <div class="project carousel-item active">
+            <div class="project__content">
+              <div
+                class="project__info text-lg-end align-items-lg-end order-lg-2"
+              >
+                <h3 class="project__title">
+                  Hive<span class="project__title-span">Fit</span>
+                </h3>
+                <p class="project__subtitle">
+                  Gestión de tu centro fitness con tecnología intuitiva y
+                  eficiente
+                </p>
+                <p class="project__text">Funcionalidades:</p>
+                <ul class="project__features project__features--right">
+                  <li class="project__feature">Gestión de clientes y pagos</li>
+                  <li class="project__feature">
+                    Rutinas personalizadas por usuario
+                  </li>
+                  <li class="project__feature">
+                    Calendario de clases y horarios
+                  </li>
+                  <li class="project__feature">
+                    Control de membresías y alertas
+                  </li>
+                </ul>
+              </div>
+              <img
+                class="project__image order-lg-1"
+                src="assets/hivefit-mockup.png"
+                alt=""
+                width="350"
+                height="350"
+                role="presentation"
+              />
+            </div>
+          </div>
+          <!-- PROJECT CBF12 -->
+          <div class="project carousel-item">
+            <div class="project__content">
+              <div class="project__info text-lg-start align-items-lg-start">
+                <h3 class="project__title">
+                  Project <span class="project__title-span">CBF12</span>
+                </h3>
+                <p class="project__subtitle">
+                  Videojuego de plataformas con enfoque creativo
+                </p>
+                <p class="project__text">Características:</p>
+                <ul class="project__features project__features--left">
+                  <li class="project__feature">Estética retro y colorida</li>
+                  <li class="project__feature">
+                    Dificultad progresiva y disfrutable
+                  </li>
+                  <li class="project__feature">
+                    Controles fluidos e intuitivos
+                  </li>
+                  <li class="project__feature">Uso de color para guiar</li>
+                </ul>
+              </div>
+              <img
+                class="project__image"
+                src="assets/projectcbf-mockup.png"
+                alt=""
+                width="350"
+                height="350"
+                role="presentation"
+              />
+            </div>
+          </div>
+          <!-- SICA APP -->
+          <div class="project carousel-item">
+            <div class="project__content">
+              <div
+                class="project__info text-lg-end align-items-lg-end order-lg-2"
+              >
+                <h3 class="project__title">
+                  SICA <span class="project__title-span">App</span>
+                </h3>
+                <p class="project__subtitle">
+                  Gestión inteligente de activos físicos
+                </p>
+                <p class="project__text">Funcionalidades:</p>
+                <ul class="project__features project__features--right">
+                  <li class="project__feature">
+                    Registro y trazabilidad de activos
+                  </li>
+                  <li class="project__feature">Gestión de traslados</li>
+                  <li class="project__feature">Reportes personalizados</li>
+                  <li class="project__feature">Roles de usuario</li>
+                </ul>
+              </div>
+              <img
+                class="project__image order-lg-1"
+                src="assets/sica-mockup.png"
+                alt=""
+                width="350"
+                height="350"
+                role="presentation"
+              />
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#projects-carousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#projects-carousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    <!-- SKILLS SECTION -->
+    <section class="skills">
+      <div class="container">
+        <h2 class="skills__headline">Lo que aporto a mi equipo</h2>
+        <div class="row flex-grow-1">
+          <div class="col-lg-6">
+            <div class="hero__content">
+              <p class="hero__text">
+                Con una base sólida en ingeniería del software y una mirada
+                analítica forjada en la ciencia, transformo ideas en interfaces
+                funcionales, accesibles y visualmente atractivas. Mi enfoque
+                combina creatividad, detalle y empatía para aportar soluciones
+                web centradas en el usuario.
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-lg-6 d-flex align-items-end align-items-lg-center"
+          ></div>
+        </div>
+      </div>
+    </section>
+    <section class="js-demos scroll-sections">
       <div class="container">
         <div class="js-demos-container position-relative">
-          <div class="js-possible-owner-demo demo possible-owner">
+          <div class="js-possible-owner-demo section possible-owner">
             <div class="demo__content">
-              <div class="demo__subtitle">Stay one step ahead</div>
-              <h2 class="demo__title">Possible Owner</h2>
+              <h2 class="demo__title">Lo que aporto a mi equipo</h2>
               <div class="js-possible-owner-scroll demo__text-wrapper">
                 <p class="demo__text">
                   Looking up a potential date, roommate or someone new in your
@@ -213,6 +394,11 @@
       <div class="container"></div>
     </footer>
   </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>

@@ -332,9 +332,28 @@ body {
   position: absolute;
   width: 500px;
   height: 500px;
-  bottom: -45%;
+  bottom: -35%;
   right: 50%;
   transform: translate(50%, 0);
+}
+
+.hero__arc-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+}
+
+.hero__arc {
+  height: 50%;
+}
+
+.hero__arc--lower {
+  background-color: #e6ebf5;
+  clip-path: ellipse(65% 200% at 50% 200%);
 }
 
 @media (min-width: 768px) {
@@ -396,31 +415,308 @@ body {
   }
 }
 
-/* --- Sections: Product Demos --- */
-.section {
+/* ------------------------- PROJECTS -------------------------- */
+.projects {
+  height: 650px;
+  width: 100%;
+  background: linear-gradient(#e6ebf5, #fff 20%);
+  margin-bottom: 150px;
+}
+
+.projects__headline {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #809bce;
+  padding: 16px 0;
+}
+
+.project {
+  padding: 0 36px 48px;
+  height: 100%;
+}
+
+.project__content {
   display: flex;
-  background: linear-gradient(180deg, #fff6f7 30%, #fff 100%);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.project__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.project__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.project__title-span {
+  color: #ffa1ac;
+}
+
+.project__subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.project__text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #809bce;
+}
+
+.project__features {
+  list-style: none;
+  padding: 0;
+  font-size: 16px;
+}
+
+.project__feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 991px) {
+  .project__feature::before {
+    display: inline-block;
+    content: "";
+    margin-right: 8px;
+    background-image: url("assets/check-bullet.svg");
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .projects {
+    height: 750px;
+  }
+
+  .projects__headline {
+    font-size: 46px;
+  }
+
+  .project__title {
+    font-size: 40px;
+  }
+
+  .project__subtitle {
+    font-size: 24px;
+  }
+
+  .project__text {
+    font-size: 22px;
+  }
+
+  .project__image {
+    width: 400px;
+    height: auto;
+  }
+
+  .project__features {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  .projects {
+    height: 550px;
+  }
+
+  .project {
+    padding: 48px 68px;
+  }
+
+  .project__content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .project__subtitle {
+    font-size: 22px;
+  }
+
+  .project__image {
+    width: 450px;
+  }
+
+  /* PROJECT FEATURES LEFT ALIGNED */
+  .project__features--left {
+    text-align: left;
+  }
+
+  .project__features--left .project__feature {
+    justify-content: flex-start;
+  }
+
+  .project__features--left .project__feature::before {
+    display: inline-block;
+    content: "";
+    margin-right: 8px;
+    background-image: url("assets/check-bullet.svg");
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  /* PROJECT FEATURES RIGHT ALIGNED */
+  .project__features--right {
+    text-align: right;
+  }
+
+  .project__features--right .project__feature {
+    justify-content: flex-end;
+  }
+
+  .project__features--right .project__feature::after {
+    display: inline-block;
+    content: "";
+    margin-left: 8px;
+    background-image: url("assets/check-bullet.svg");
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+/* ---------------------- CAROUSEL OVERRIDES ---------------------- */
+.carousel-indicators [data-bs-target] {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 0;
+  transition: all 0.25s ease-in-out;
+  background-color: #dcdcdc;
+}
+
+.carousel-indicators .active {
+  width: 24px;
+  border-radius: 100px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 26px;
+  height: 26px;
+  margin: auto 8px;
+  background-color: #f3f4f6;
+  border-radius: 50%;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("assets/chevron-left.svg");
+}
+
+.carousel-control-next-icon {
+  background-image: url("assets/chevron-right.svg");
+}
+
+@media (min-width: 768px) {
+  .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+  }
+
+  .carousel-indicators .active {
+    width: 32px;
+    border-radius: 100px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 36px;
+    height: 36px;
+  }
+
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* ------------------------- SKILLS -------------------------- */
+.skills {
+  background-color: #a6cabd;
+  padding: 32px 0;
+  color: #fff;
+}
+
+.skills__headline {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  padding: 16px 0;
+}
+
+@media (min-width: 768px) {
+  .skills {
+    padding: 48px 0;
+  }
+
+  .skills__headline {
+    font-size: 46px;
+  }
+}
+
+@media (min-width: 992px) {
+}
+
+/* ------------------------- SCROLL SECTIONS -------------------------- */
+.scroll-sections {
+  display: flex;
+  background: linear-gradient(#fff, #e6ebf5, 20%);
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   overflow: hidden;
+  width: 100%;
 }
-.demo {
+
+.section {
   display: flex;
   flex-direction: column;
   padding: 16px 0;
   gap: 24px;
 }
+
 @media (min-width: 768px) {
-  .demo {
+  .section {
     gap: 42px;
   }
 }
+
 @media (min-width: 992px), (orientation: landscape) {
-  .demo {
+  .section {
     flex-direction: row;
   }
 }
+
 .demo.fraud-scan {
   display: none;
   position: absolute;
