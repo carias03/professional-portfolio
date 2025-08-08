@@ -55,98 +55,124 @@ function textAnimation() {
   });
 }
 
-const DISTANCE_PER_ELEMENT = 800;
+function numbersAnimation() {
+  gsap.registerPlugin(ScrollTrigger);
+  const numberElements = document.querySelectorAll(".js-stats-number");
 
-function getDemoElements() {
-  return {
-    possibleOwnerScrollableText: gsap.utils.toArray(
-      document.querySelector(".js-possible-owner-scroll").children
-    ),
-    fraudScanScrollableText: gsap.utils.toArray(
-      document.querySelector(".js-fraud-scan-scroll").children
-    ),
-    demos: document.querySelector(".js-demos"),
-  };
-}
+  numberElements.forEach((numberEl) => {
+    const finalValue = parseInt(numberEl.textContent, 10);
+    let valor = { val: 0 };
 
-function __initSectionScrollTrigger(animation, elementsLength) {
-  ScrollTrigger.create({
-    animation: animation,
-    trigger: ".js-demos",
-    pin: ".js-demos",
-    start: "center center",
-    end: `+=${DISTANCE_PER_ELEMENT * elementsLength}px`,
-    scrub: true,
-    snap: 1 / (elementsLength - 1),
-    anticipatePin: 1,
+    gsap.to(valor, {
+      val: finalValue,
+      duration: 2,
+      ease: "power1.out",
+      onUpdate: () => {
+        numberEl.textContent = Math.floor(valor.val);
+      },
+
+      scrollTrigger: {
+        trigger: ".js-stat-cards",
+        start: "top 80%",
+        toggleActions: "play reverse play reverse",
+      },
+    });
   });
 }
 
-function __animationScrollTrigger(animation, distance, demos) {
-  ScrollTrigger.create({
-    trigger: demos,
-    animation: animation,
-    start: "top center",
-    end: `+=${distance}px`,
-    toggleActions: "play pause restart reset",
-  });
-}
+function formValidation() {
+  const form = document.querySelector(".js-contact-form");
+  const inputs = form.querySelectorAll("input, textarea");
 
-function __generateStepsAnimation(timeline, items) {
-  items.forEach((container, i) => {
-    if (items[i - 1]) {
-      timeline.to(items[i - 1], { yPercent: `-=100`, opacity: 0 });
-      timeline.to(container, { yPercent: -100 * i, opacity: 1 }, "<");
+  const nameRegex = /^[a-zA-ZÀ-ÿ\s]+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function validateName(value) {
+    if (!value.trim()) return "El nombre es obligatorio.";
+    if (!nameRegex.test(value))
+      return "El nombre solo debe contener letras y espacios.";
+    return null;
+  }
+
+  function validateEmail(value) {
+    if (!value.trim()) return "El correo es obligatorio.";
+    if (!emailRegex.test(value)) return "El correo no tiene un formato válido.";
+    return null;
+  }
+
+  function validateMessage(value) {
+    if (!value.trim()) return "El mensaje es obligatorio.";
+    return null;
+  }
+
+  function validateField(input) {
+    const value = input.value;
+    let error = null;
+
+    switch (input.name) {
+      case "contact-name":
+        error = validateName(value);
+        break;
+      case "contact-email":
+        error = validateEmail(value);
+        break;
+      case "contact-message":
+        error = validateMessage(value);
+        break;
+    }
+
+    const errorElement = input.parentElement.querySelector(".js-error");
+
+    if (error) {
+      input.classList.add("error");
+      errorElement.textContent = error;
+      errorElement.classList.remove("d-none");
+    } else {
+      input.classList.remove("error");
+      errorElement.textContent = "";
+      errorElement.classList.add("d-none");
+    }
+
+    return !error;
+  }
+
+  function validateForm() {
+    let isValid = true;
+    inputs.forEach((input) => {
+      const valid = validateField(input);
+      if (!valid) isValid = false;
+    });
+    return isValid;
+  }
+
+  // Validación en tiempo real por input
+  inputs.forEach((input) => {
+    input.addEventListener("input", () => validateField(input));
+    input.addEventListener("change", () => validateField(input));
+    input.addEventListener("keyup", () => validateField(input));
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const isValid = validateForm();
+    if (isValid) {
+      form.reset();
+      inputs.forEach((input) => {
+        const errorElement = input.parentElement.querySelector(".js-error");
+        input.classList.remove("error");
+        errorElement.textContent = "";
+        errorElement.classList.add("d-none");
+      });
+    } else {
+      validateForm();
     }
   });
 }
-function __initSectionScrollAnimation() {
-  const demosContainer = document.querySelector(".js-demos-container");
-  const possibleDemo = document.querySelector(".js-possible-owner-demo");
-  const fraudScanDemo = document.querySelector(".js-fraud-scan-demo");
-  const elements = getDemoElements();
-  const elementsLength =
-    elements.possibleOwnerScrollableText.length +
-    elements.fraudScanScrollableText.length;
-  const timeline = gsap.timeline();
-  timeline.set(demosContainer, { height: "auto" });
-  __generateStepsAnimation(timeline, elements.possibleOwnerScrollableText);
-  timeline
-    .to(demosContainer, {
-      height: () => {
-        return possibleDemo.clientHeight;
-      },
-    })
-    .to(
-      possibleDemo,
-      {
-        position: "absolute",
-        left: 0,
-        top: 0,
-        opacity: 0,
-        display: "none",
-        y: -100,
-        x: 0,
-      },
-      "<"
-    )
-    .to(
-      fraudScanDemo,
-      { display: "flex", opacity: 1, position: "static", y: 0, x: 0 },
-      "<"
-    )
-    .to(demosContainer, { height: "auto" }, "<");
-  __generateStepsAnimation(timeline, elements.fraudScanScrollableText);
-  __initSectionScrollTrigger(timeline, elementsLength);
-}
-function initProductDemos() {
-  __initSectionScrollAnimation();
-}
 
-// --- Main init function ---
-function initAll() {
+function init() {
   textAnimation();
-  initProductDemos();
+  numbersAnimation();
+  formValidation();
 }
 
-document.addEventListener("DOMContentLoaded", initAll);
+document.addEventListener("DOMContentLoaded", init);
