@@ -1241,3 +1241,25 @@ input.check-toggle-round-flat:checked + label:after {
 .footer__social {
   margin-right: 8px;
 }
+
+.scroll-top {
+  display: none;
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  font-size: 18px;
+  background-color: rgba(125, 125, 125, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-top:hover {
+  background-color: #555;
+}

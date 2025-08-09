@@ -404,12 +404,35 @@ function scrollToContact() {
   });
 }
 
+function scrollToTop() {
+  window.addEventListener("scroll", () => {
+    const btn = document.querySelector(".js-scroll-top");
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+
+    // Subir al inicio al hacer clic
+    btn.onclick = function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
+  });
+}
+
 function init() {
   translateEventListener();
   textAnimation();
   numbersAnimation();
   formValidation();
   scrollToContact();
+  scrollToTop();
 }
 
 document.addEventListener("DOMContentLoaded", init);
