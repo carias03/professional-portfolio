@@ -38,29 +38,43 @@
           <div class="row flex-grow-1">
             <div class="col-lg-6">
               <div class="hero__content">
-                <h1 class="hero__headline">¡Hola! Soy Caro Arias</h1>
+                <h1 class="hero__headline" data-translate="heroHeadline">
+                  ¡Hola! Soy Caro Arias
+                </h1>
                 <h2 class="hero__subheadline">
-                  <span class="js-hero-subheadline">
-                    Desarrolladora Front-End
-                  </span>
-                  <span class="js-hero-subheadline">
-                    Diseñadora de experiencias
-                  </span>
-                  <span class="js-hero-subheadline">
-                    Creadora visual y funcional
-                  </span>
-                  <span class="js-hero-subheadline">
-                    Apasionada por el detalle
-                  </span>
+                  <span
+                    class="js-hero-subheadline"
+                    data-translate="heroSubheadline0"
+                    >Desarrolladora Front-End</span
+                  >
+                  <span
+                    class="js-hero-subheadline"
+                    data-translate="heroSubheadline1"
+                    >Diseñadora de experiencias</span
+                  >
+                  <span
+                    class="js-hero-subheadline"
+                    data-translate="heroSubheadline2"
+                    >Creadora visual y funcional</span
+                  >
+                  <span
+                    class="js-hero-subheadline"
+                    data-translate="heroSubheadline3"
+                    >Apasionada por el detalle</span
+                  >
                 </h2>
-                <p class="hero__text">
+                <p class="hero__text" data-translate="heroText">
                   Con una base sólida en ingeniería del software y una mirada
                   analítica forjada en la ciencia, transformo ideas en
                   interfaces funcionales, accesibles y visualmente atractivas.
                   Mi enfoque combina creatividad, detalle y empatía para aportar
                   soluciones web centradas en el usuario.
                 </p>
-                <button class="hero__button button" type="button">
+                <button
+                  class="js-hero-cta hero__button button"
+                  type="button"
+                  data-translate="heroButton"
+                >
                   Construyamos algo juntos
                 </button>
               </div>
@@ -86,7 +100,9 @@
     <!-- PROJECTS SECTION -->
     <section class="projects">
       <div class="container">
-        <h2 class="projects__headline">Lo que he creado</h2>
+        <h2 class="projects__headline" data-translate="projectsHeadline">
+          Lo que he creado
+        </h2>
         <div
           id="projects-carousel"
           class="carousel slide h-100"
@@ -100,6 +116,7 @@
               data-bs-slide-to="0"
               aria-current="true"
               aria-label="Slide 1"
+              data-index="1"
             ></button>
             <button
               class="carousel-indicator"
@@ -107,6 +124,7 @@
               data-bs-target="#projects-carousel"
               data-bs-slide-to="1"
               aria-label="Slide 2"
+              data-index="2"
             ></button>
             <button
               class="carousel-indicator"
@@ -114,6 +132,7 @@
               data-bs-target="#projects-carousel"
               data-bs-slide-to="2"
               aria-label="Slide 3"
+              data-index="3"
             ></button>
           </div>
           <div class="carousel-inner h-100">
@@ -126,22 +145,39 @@
                   <h3 class="project__title">
                     Hive<span class="project__title-span">Fit</span>
                   </h3>
-                  <p class="project__subtitle">
+                  <p class="project__subtitle" data-translate="hivefitSubtitle">
                     Gestión de tu centro fitness con tecnología intuitiva y
                     eficiente
                   </p>
-                  <p class="project__text">Funcionalidades:</p>
+                  <p
+                    class="project__text"
+                    data-translate="hivefitFeaturesTitle"
+                  >
+                    Funcionalidades:
+                  </p>
                   <ul class="project__features project__features--right">
-                    <li class="project__feature">
+                    <li
+                      class="project__feature"
+                      data-translate="hivefitFeature0"
+                    >
                       Gestión de clientes y pagos
                     </li>
-                    <li class="project__feature">
+                    <li
+                      class="project__feature"
+                      data-translate="hivefitFeature1"
+                    >
                       Rutinas personalizadas por usuario
                     </li>
-                    <li class="project__feature">
+                    <li
+                      class="project__feature"
+                      data-translate="hivefitFeature2"
+                    >
                       Calendario de clases y horarios
                     </li>
-                    <li class="project__feature">
+                    <li
+                      class="project__feature"
+                      data-translate="hivefitFeature3"
+                    >
                       Control de membresías y alertas
                     </li>
                   </ul>
@@ -161,21 +197,28 @@
               <div class="project__content">
                 <div class="project__info text-lg-start align-items-lg-start">
                   <h3 class="project__title">
-                    Project <span class="project__title-span">CBF12</span>
+                    Project
+                    <span class="project__title-span">CBF12</span>
                   </h3>
-                  <p class="project__subtitle">
+                  <p class="project__subtitle" data-translate="cbf12Subtitle">
                     Videojuego de plataformas con enfoque creativo
                   </p>
-                  <p class="project__text">Características:</p>
+                  <p class="project__text" data-translate="cbf12FeaturesTitle">
+                    Características:
+                  </p>
                   <ul class="project__features project__features--left">
-                    <li class="project__feature">Estética retro y colorida</li>
-                    <li class="project__feature">
+                    <li class="project__feature" data-translate="cbf12Feature0">
+                      Estética retro y colorida
+                    </li>
+                    <li class="project__feature" data-translate="cbf12Feature1">
                       Dificultad progresiva y disfrutable
                     </li>
-                    <li class="project__feature">
+                    <li class="project__feature" data-translate="cbf12Feature2">
                       Controles fluidos e intuitivos
                     </li>
-                    <li class="project__feature">Uso de color para guiar</li>
+                    <li class="project__feature" data-translate="cbf12Feature3">
+                      Uso de color para guiar
+                    </li>
                   </ul>
                 </div>
                 <img
@@ -195,19 +238,28 @@
                   class="project__info text-lg-end align-items-lg-end order-lg-2"
                 >
                   <h3 class="project__title">
-                    SICA <span class="project__title-span">App</span>
+                    SICA
+                    <span class="project__title-span">App</span>
                   </h3>
-                  <p class="project__subtitle">
+                  <p class="project__subtitle" data-translate="sicaSubtitle">
                     Gestión inteligente de activos físicos
                   </p>
-                  <p class="project__text">Funcionalidades:</p>
+                  <p class="project__text" data-translate="sicaFeaturesTitle">
+                    Funcionalidades:
+                  </p>
                   <ul class="project__features project__features--right">
-                    <li class="project__feature">
+                    <li class="project__feature" data-translate="sicaFeature0">
                       Registro y trazabilidad de activos
                     </li>
-                    <li class="project__feature">Gestión de traslados</li>
-                    <li class="project__feature">Reportes personalizados</li>
-                    <li class="project__feature">Roles de usuario</li>
+                    <li class="project__feature" data-translate="sicaFeature1">
+                      Gestión de traslados
+                    </li>
+                    <li class="project__feature" data-translate="sicaFeature2">
+                      Reportes personalizados
+                    </li>
+                    <li class="project__feature" data-translate="sicaFeature3">
+                      Roles de usuario
+                    </li>
                   </ul>
                 </div>
                 <img
@@ -245,7 +297,9 @@
     <!-- SKILLS SECTION -->
     <section class="skills">
       <div class="container">
-        <h2 class="skills__headline">Lo que aporto a mi equipo</h2>
+        <h2 class="skills__headline" data-translate="skillsHeadline">
+          Lo que aporto a mi equipo
+        </h2>
         <div class="row">
           <div class="col-md-6 mb-4 mb-md-0 pe-md-3">
             <div class="skills__toggle-buttons">
@@ -259,7 +313,9 @@
               >
                 <div class="d-flex align-items-center">
                   <i class="skills__toggle-icon fa-solid fa-gears"></i>
-                  <span>Habilidades Técnicas</span>
+                  <span data-translate="skillsTechnical"
+                    >Habilidades Técnicas</span
+                  >
                 </div>
                 <i class="skills__toggle-chevron fa-solid fa-chevron-right"></i>
               </button>
@@ -273,7 +329,7 @@
               >
                 <div class="d-flex align-items-center">
                   <i class="skills__toggle-icon fa-solid fa-people-group"></i>
-                  <span>Habilidades Blandas</span>
+                  <span data-translate="skillsSoft">Habilidades Blandas</span>
                 </div>
                 <i class="skills__toggle-chevron fa-solid fa-chevron-right"></i>
               </button>
@@ -289,7 +345,7 @@
                   <i
                     class="skills__toggle-icon fa-solid fa-hand-holding-hand"
                   ></i>
-                  <span>Valores</span>
+                  <span data-translate="skillsValues">Valores</span>
                 </div>
                 <i class="skills__toggle-chevron fa-solid fa-chevron-right"></i>
               </button>
@@ -306,11 +362,34 @@
                 data-bs-parent="#skills-toggle-descriptions"
               >
                 <ul class="skills__list">
-                  <li class="skills__item">HTML5, CSS3, JavaScript</li>
-                  <li class="skills__item">Node.js, Webpack</li>
-                  <li class="skills__item">GSAP, SQL Server</li>
-                  <li class="skills__item">Control de versiones con Git</li>
-                  <li class="skills__item">
+                  <li
+                    class="skills__item"
+                    data-translate="skillsTechnicalList0"
+                  >
+                    HTML5, CSS3, JavaScript
+                  </li>
+                  <li
+                    class="skills__item"
+                    data-translate="skillsTechnicalList1"
+                  >
+                    Node.js, Webpack
+                  </li>
+                  <li
+                    class="skills__item"
+                    data-translate="skillsTechnicalList2"
+                  >
+                    GSAP, SQL Server
+                  </li>
+                  <li
+                    class="skills__item"
+                    data-translate="skillsTechnicalList3"
+                  >
+                    Control de versiones con Git
+                  </li>
+                  <li
+                    class="skills__item"
+                    data-translate="skillsTechnicalList4"
+                  >
                     Trabajo en entornos ágiles (Jira, SCRUM)
                   </li>
                 </ul>
@@ -321,11 +400,21 @@
                 data-bs-parent="#skills-toggle-descriptions"
               >
                 <ul class="skills__list">
-                  <li class="skills__item">Responsabilidad y compromiso</li>
-                  <li class="skills__item">Comunicación efectiva y empatía</li>
-                  <li class="skills__item">Colaboración interdisciplinaria</li>
-                  <li class="skills__item">Liderazgo y proactividad</li>
-                  <li class="skills__item">Atención al detalle</li>
+                  <li class="skills__item" data-translate="skillsSoftList0">
+                    Responsabilidad y compromiso
+                  </li>
+                  <li class="skills__item" data-translate="skillsSoftList1">
+                    Comunicación efectiva y empatía
+                  </li>
+                  <li class="skills__item" data-translate="skillsSoftList2">
+                    Colaboración interdisciplinaria
+                  </li>
+                  <li class="skills__item" data-translate="skillsSoftList3">
+                    Liderazgo y proactividad
+                  </li>
+                  <li class="skills__item" data-translate="skillsSoftList4">
+                    Atención al detalle
+                  </li>
                 </ul>
               </div>
               <div
@@ -335,19 +424,19 @@
               >
                 <ul class="skills__list">
                   <li class="skills__item">
-                    <span>
-                      <strong>Responsabilidad:</strong> Entrego lo que me
+                    <span data-translate="skillsValuesList0"
+                      ><strong>Responsabilidad:</strong> Entrego lo que me
                       comprometo, de forma ordenada y eficiente.</span
                     >
                   </li>
                   <li class="skills__item">
-                    <span>
-                      <strong>Excelencia:</strong> Me enfoco en la calidad del
+                    <span data-translate="skillsValuesList1"
+                      ><strong>Excelencia:</strong> Me enfoco en la calidad del
                       código y la experiencia visual.</span
                     >
                   </li>
                   <li class="skills__item">
-                    <span
+                    <span data-translate="skillsValuesList2"
                       ><strong>Colaboración:</strong> Disfruto trabajar en
                       equipo y comunicarme con claridad.</span
                     >
@@ -362,56 +451,85 @@
     <!-- EXPERIENCE SECTION -->
     <section class="experience">
       <div class="container">
-        <h2 class="experience__headline">Lo que me respalda</h2>
-        <p class="experience__subheadline">
+        <h2 class="experience__headline" data-translate="experienceHeadline">
+          Lo que me respalda
+        </h2>
+        <p
+          class="experience__subheadline"
+          data-translate="experienceSubheadline"
+        >
           Trayectoria profesional en LTV Co desarrollando interfaces de alto
           impacto
         </p>
         <div class="experience__cards">
           <div class="experience__card experience__card--blue">
-            <i class="experience__icon fa-solid fa-arrow-pointer"></i>
-            <h3 class="experience__title">Optimización UX</h3>
-            <p class="experience__text">
+            <i
+              class="experience__icon fa-solid fa-arrow-pointer"
+              aria-hidden="true"
+            ></i>
+            <h3 class="experience__title" data-translate="experienceCardTitle0">
+              Optimización UX
+            </h3>
+            <p class="experience__text" data-translate="experienceCardText0">
               Mejora continua de la experiencia de usuario pre-paywall para
               aumentar conversiones.
             </p>
           </div>
           <div class="experience__card experience__card--pink">
-            <i class="experience__icon fa-solid fa-code"></i>
-            <h3 class="experience__title">Desarrollo Front-End</h3>
-            <p class="experience__text">
+            <i class="experience__icon fa-solid fa-code" aria-hidden="true"></i>
+            <h3 class="experience__title" data-translate="experienceCardTitle1">
+              Desarrollo Front-End
+            </h3>
+            <p class="experience__text" data-translate="experienceCardText1">
               Implementación de interfaces y componentes reutilizables con
               buenas prácticas de código.
             </p>
           </div>
           <div class="experience__card experience__card--green">
-            <i class="experience__icon fa-solid fa-people-carry-box"></i>
-            <h3 class="experience__title">Colaboración Ágil</h3>
-            <p class="experience__text">
+            <i
+              class="experience__icon fa-solid fa-people-carry-box"
+              aria-hidden="true"
+            ></i>
+            <h3 class="experience__title" data-translate="experienceCardTitle2">
+              Colaboración Ágil
+            </h3>
+            <p class="experience__text" data-translate="experienceCardText2">
               Trabajo en equipo con diseñadores, product managers y QA bajo
               metodologías ágiles.
             </p>
           </div>
           <div class="experience__card experience__card--blue">
-            <i class="experience__icon fa-solid fa-chart-pie"></i>
-            <h3 class="experience__title">Integración de Tests</h3>
-            <p class="experience__text">
+            <i
+              class="experience__icon fa-solid fa-chart-pie"
+              aria-hidden="true"
+            ></i>
+            <h3 class="experience__title" data-translate="experienceCardTitle3">
+              Integración de Tests
+            </h3>
+            <p class="experience__text" data-translate="experienceCardText3">
               Validación de cambios mediante pruebas A/B para medir impacto real
               en métricas.
             </p>
           </div>
           <div class="experience__card experience__card--pink">
-            <i class="experience__icon fa-solid fa-book"></i>
-            <h3 class="experience__title">Documentación Eficiente</h3>
-            <p class="experience__text">
+            <i class="experience__icon fa-solid fa-book" aria-hidden="true"></i>
+            <h3 class="experience__title" data-translate="experienceCardTitle4">
+              Documentación Eficiente
+            </h3>
+            <p class="experience__text" data-translate="experienceCardText4">
               Actualización de guías y procesos técnicos para facilitar el
               onboarding y la ejecución.
             </p>
           </div>
           <div class="experience__card experience__card--green">
-            <i class="experience__icon fa-solid fa-paintbrush"></i>
-            <h3 class="experience__title">De diseño a código</h3>
-            <p class="experience__text">
+            <i
+              class="experience__icon fa-solid fa-paintbrush"
+              aria-hidden="true"
+            ></i>
+            <h3 class="experience__title" data-translate="experienceCardTitle5">
+              De diseño a código
+            </h3>
+            <p class="experience__text" data-translate="experienceCardText5">
               Traducción fiel de prototipos y diseños en experiencias
               interactivas funcionales.
             </p>
@@ -426,13 +544,15 @@
         <div class="stats__arc stats__arc--lower"></div>
       </div>
       <div class="container">
-        <h2 class="stats__headline">Lo que dicen los números</h2>
+        <h2 class="stats__headline" data-translate="statsHeadline">
+          Lo que dicen los números
+        </h2>
         <div class="js-stat-cards stats__cards">
           <div class="stats__card">
             <h3 class="stats__number">
               +<span class="js-stats-number">3</span>
             </h3>
-            <p class="stats__text">
+            <p class="stats__text" data-translate="statsText0">
               años creando soluciones digitales efectivas
             </p>
           </div>
@@ -440,21 +560,27 @@
             <h3 class="stats__number">
               +<span class="js-stats-number">150</span>
             </h3>
-            <p class="stats__text">implementaciones en interfaces web</p>
+            <p class="stats__text" data-translate="statsText1">
+              implementaciones en interfaces web
+            </p>
           </div>
           <div class="stats__card">
             <h3 class="stats__number">
               +<span class="js-stats-number">12</span>
             </h3>
-            <p class="stats__text">tecnologías y herramientas a tu servicio</p>
+            <p class="stats__text" data-translate="statsText2">
+              tecnologías y herramientas a tu servicio
+            </p>
           </div>
         </div>
       </div>
     </section>
     <!-- CONTACT SECTION -->
-    <section class="contact">
+    <section class="js-contact-section contact">
       <div class="container">
-        <h2 class="contact__headline">Tu próximo proyecto comienza aquí</h2>
+        <h2 class="contact__headline" data-translate="contactHeadline">
+          Tu próximo proyecto comienza aquí
+        </h2>
         <div class="contact__form">
           <form
             class="js-contact-form w-100 d-flex flex-column align-items-center justify-content-center"
@@ -466,7 +592,9 @@
                 name="contact-name"
                 placeholder=""
               />
-              <label for="contact-name">Nombre</label>
+              <label for="contact-name" data-translate="contactLabelName"
+                >Nombre</label
+              >
               <p class="js-error error d-none">Error</p>
             </div>
             <div class="input mb-3">
@@ -476,7 +604,9 @@
                 name="contact-email"
                 placeholder=""
               />
-              <label for="contact-email">Correo electrónico</label>
+              <label for="contact-email" data-translate="contactLabelEmail"
+                >Correo electrónico</label
+              >
               <p class="js-error error d-none">Error</p>
             </div>
             <div class="input mb-2">
@@ -486,18 +616,83 @@
                 placeholder=""
                 rows="5"
               ></textarea>
-              <label for="contact-message">Mensaje</label>
+              <label for="contact-message" data-translate="contactLabelMessage"
+                >Mensaje</label
+              >
               <p class="js-error error d-none">Error</p>
             </div>
 
-            <button class="button" type="submit">Enviar</button>
+            <button
+              class="button"
+              type="submit"
+              data-translate="contactButtonSend"
+            >
+              Enviar
+            </button>
           </form>
         </div>
       </div>
     </section>
     <!-- FOOTER -->
     <footer class="footer">
-      <div class="container"></div>
+      <div class="container">
+        <div class="footer__content">
+          <div class="pb-3 border-bottom">
+            <img
+              class="footer__logo"
+              src="assets/caro-arias-logo.svg"
+              width="100"
+              height="48"
+              alt="Caro Arias"
+            />
+          </div>
+          <p class="footer__text text-center pt-3">
+            &copy; 2025 Caro Arias.
+            <span data-translate="footerText"
+              >Todos los derechos reservados.</span
+            >
+          </p>
+          <div class="footer__contact">
+            <div class="switch">
+              <input
+                id="language-toggle"
+                class="js-language-toggle check-toggle check-toggle-round-flat"
+                type="checkbox"
+              />
+              <label for="language-toggle"></label>
+              <span class="text-uppercase on">es</span>
+              <span class="text-uppercase off">en</span>
+            </div>
+
+            <div class="footer__socials">
+              <div class="footer__social">
+                <a
+                  href="https://api.whatsapp.com/send?phone=50685825355"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="assets/whatsapp.svg" width="24" height="24" alt=""
+                /></a>
+              </div>
+              <div class="footer__social">
+                <a
+                  href="https://github.com/carias03"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="assets/github.svg" width="24" height="24" alt=""
+                /></a>
+              </div>
+              <div class="footer__social">
+                <a
+                  href="https://www.linkedin.com/in/caroarijime/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="assets/linkedin.svg" width="24" height="24" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
   <script
