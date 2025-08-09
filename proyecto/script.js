@@ -1,13 +1,26 @@
+function getLang() {
+  const languageToggle = document.getElementById("language-toggle");
+  return languageToggle.checked ? "en" : "es";
+}
+
+let animationTimeline;
+
 function textAnimation() {
   gsap.registerPlugin(TextPlugin);
+
+  if (animationTimeline) {
+    animationTimeline.kill(); // Para timeline previo si existe
+  }
+
+  animationTimeline = gsap.timeline({ repeat: -1 });
+
   const contentElements = document.querySelectorAll(".js-hero-subheadline");
   const durationPerLetter = 0.07;
   const pauseAfterWrite = 2;
   const pauseAfterErase = 0.2;
-  const timeline = gsap.timeline({ repeat: -1 });
 
   contentElements.forEach((el) => {
-    const fullText = el.innerHTML.trim();
+    const fullText = el.textContent.trim();
     el.innerHTML = "";
 
     const writeDuration = Math.max(fullText.length * durationPerLetter, 0.5);
@@ -16,7 +29,7 @@ function textAnimation() {
       0.3
     );
 
-    timeline.call(
+    animationTimeline.call(
       () => {
         contentElements.forEach((e) => e.classList.remove("typing"));
         el.classList.add("typing");
@@ -25,18 +38,15 @@ function textAnimation() {
       "+=0"
     );
 
-    // Animación de escritura
-    timeline.to(el, {
+    animationTimeline.to(el, {
       text: fullText,
       duration: writeDuration,
       ease: "none",
     });
 
-    // Pausa después de escribir
-    timeline.to({}, { duration: pauseAfterWrite });
+    animationTimeline.to({}, { duration: pauseAfterWrite });
 
-    // Animación de borrado que simula backspace
-    timeline.to(
+    animationTimeline.to(
       { progress: 1 },
       {
         progress: 0,
@@ -50,8 +60,7 @@ function textAnimation() {
       }
     );
 
-    // Pausa después de borrar
-    timeline.to({}, { duration: pauseAfterErase });
+    animationTimeline.to({}, { duration: pauseAfterErase });
   });
 }
 
@@ -86,12 +95,6 @@ function formValidation() {
 
   const nameRegex = /^[a-zA-ZÀ-ÿ\s]+$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  // Detectar idioma actual (usa tu variable global del switch)
-  function getLang() {
-    const languageToggle = document.getElementById("language-toggle");
-    return languageToggle.checked ? "en" : "es";
-  }
 
   // Mensajes de error por idioma
   const errorMessages = {
@@ -204,7 +207,8 @@ const translations = {
     heroSubheadline3: "Apasionada por el detalle",
     heroText:
       "Con una base sólida en ingeniería del software y una mirada analítica forjada en la ciencia, transformo ideas en interfaces funcionales, accesibles y visualmente atractivas. Mi enfoque combina creatividad, detalle y empatía para aportar soluciones web centradas en el usuario.",
-    heroButton: "Construyamos algo juntos",
+    heroButton: "Construyamos juntos",
+    cvButton: "Descargar CV",
     projectsHeadline: "Lo que he creado",
     projectsSubheadline:
       "Proyectos que reflejan mi pasión por el desarrollo y el diseño centrado en el usuario.",
@@ -293,7 +297,8 @@ const translations = {
     heroSubheadline3: "Passionate about Detail",
     heroText:
       "With a solid foundation in software engineering and an analytical mindset forged in science, I transform ideas into functional, accessible, and visually appealing interfaces. My approach combines creativity, attention to detail, and empathy to deliver user-centered web solutions.",
-    heroButton: "Let's build something together",
+    heroButton: "Let's build together",
+    cvButton: "Download CV",
     projectsHeadline: "What I've created",
     projectsSubheadline:
       "Projects that reflect my passion for development and user-centered design.",
@@ -376,7 +381,7 @@ const translations = {
   },
 };
 
-function translatePage(lang = "en") {
+function translatePage(lang = "es") {
   const langTranslations = translations[lang];
   const elements = document.querySelectorAll("[data-translate]");
 
@@ -392,24 +397,50 @@ function translatePage(lang = "en") {
   });
 }
 
+function translateOnPageLoad() {
+  translatePage();
+  textAnimation();
+}
+
 function translateEventListener() {
-  const languageToggle = document.querySelector(".js-language-toggle");
-  let currentLang = "es";
+  const languageToggles = document.querySelectorAll(".js-language-toggle");
 
-  languageToggle.addEventListener("change", () => {
-    const form = document.querySelector(".js-contact-form");
-    const inputs = form.querySelectorAll("input, textarea");
+  languageToggles.forEach((toggle) => {
+    toggle.addEventListener("change", () => {
+      const form = document.querySelector(".js-contact-form");
+      const inputs = form.querySelectorAll("input, textarea");
+      let currentLang = "es";
+      currentLang = toggle.checked ? "en" : "es";
+      translatePage(currentLang);
+      textAnimation();
 
-    currentLang = languageToggle.checked ? "en" : "es";
-    translatePage(currentLang);
+      languageToggles.forEach((otherToggle) => {
+        otherToggle.checked = toggle.checked;
+      });
 
-    inputs.forEach((input) => {
-      const errorElement = input.parentElement.querySelector(".js-error");
-      input.classList.remove("error");
-      errorElement.textContent = "";
-      errorElement.classList.add("d-none");
+      inputs.forEach((input) => {
+        const errorElement = input.parentElement.querySelector(".js-error");
+        input.classList.remove("error");
+        errorElement.textContent = "";
+        errorElement.classList.add("d-none");
+      });
+
+      updateDownloadLink();
     });
   });
+}
+
+function updateDownloadLink() {
+  const downloadLink = document.querySelector(".js-download-cv");
+  const lang = getLang();
+
+  if (lang === "en") {
+    downloadLink.href = "CV_CarolinaArias_EN.pdf";
+    downloadLink.download = "CV_CarolinaArias_EN.pdf";
+  } else {
+    downloadLink.href = "CV_CarolinaArias_ES.pdf";
+    downloadLink.download = "CV_CarolinaArias_ES.pdf";
+  }
 }
 
 function scrollToContact() {
@@ -427,9 +458,9 @@ function scrollToTop() {
       document.body.scrollTop > 300 ||
       document.documentElement.scrollTop > 300
     ) {
-      btn.style.display = "block";
+      gsap.to(btn, { opacity: 1, duration: 0.1 });
     } else {
-      btn.style.display = "none";
+      gsap.to(btn, { opacity: 0, duration: 0.1 });
     }
 
     // Subir al inicio al hacer clic
@@ -444,7 +475,7 @@ function scrollToTop() {
 
 function init() {
   translateEventListener();
-  textAnimation();
+  translateOnPageLoad();
   numbersAnimation();
   formValidation();
   scrollToContact();

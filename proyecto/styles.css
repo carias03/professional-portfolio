@@ -178,7 +178,6 @@ input.check-toggle-round-flat:checked + label:after {
   font-family: "Poppins", sans-serif;
   appearance: none;
   backface-visibility: hidden;
-  background-color: #b8e0d2;
   border-radius: 10px;
   border-style: none;
   box-shadow: none;
@@ -206,11 +205,11 @@ input.check-toggle-round-flat:checked + label:after {
 }
 
 .button:hover {
-  background-color: #a6cabd;
   box-shadow: rgba(0, 0, 0, 0.05) 0 5px 30px, rgba(0, 0, 0, 0.05) 0 1px 4px;
   opacity: 1;
   transform: translateY(0);
   transition-duration: 0.35s;
+  color: #fff;
 }
 
 .button:hover:after {
@@ -228,11 +227,27 @@ input.check-toggle-round-flat:checked + label:after {
   opacity: 1;
 }
 
+.button--primary {
+  background-color: #b8e0d2;
+}
+
+.button--primary:hover {
+  background-color: #a6cabd;
+}
+
+.button--secondary {
+  background-color: #ffa1ac;
+}
+
+.button--secondary:hover {
+  background-color: #cc818a;
+}
+
 @media (min-width: 768px) {
   .button {
     padding: 14px 22px;
     width: fit-content;
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -457,6 +472,13 @@ input.check-toggle-round-flat:checked + label:after {
   height: 80px;
 }
 
+.hero__ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .hero__arc {
   height: 100%;
   width: 100%;
@@ -499,12 +521,13 @@ input.check-toggle-round-flat:checked + label:after {
     right: 50%;
   }
 
-  .hero__button {
-    margin: 0 auto;
-  }
-
   .hero__arc-container {
     height: 120px;
+  }
+
+  .hero__ctas {
+    flex-direction: row;
+    justify-content: flex-start;
   }
 }
 
@@ -964,7 +987,6 @@ input.check-toggle-round-flat:checked + label:after {
   text-align: center;
   font-size: 18px;
   font-weight: 300;
-  font-style: italic;
   margin-bottom: 24px;
 }
 
@@ -1242,24 +1264,39 @@ input.check-toggle-round-flat:checked + label:after {
   margin-right: 8px;
 }
 
+.footer__social-icon {
+  font-size: 26px;
+  color: #809bce;
+}
+
+.footer__social-icon:hover {
+  color: #5a6d90;
+}
+
+/* Scroll Top */
 .scroll-top {
-  display: none;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
+  background-color: #ffa1ac;
   width: 40px;
   height: 40px;
+  text-align: center;
+  border-radius: 4px;
   bottom: 20px;
   right: 20px;
-  z-index: 100;
-  font-size: 18px;
-  background-color: rgba(125, 125, 125, 0.5);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s, opacity 0.5s, visibility 0.5s;
+  z-index: 2;
+  opacity: 0;
+  color: #fff;
 }
 
 .scroll-top:hover {
-  background-color: #555;
+  cursor: pointer;
+  background-color: #cc818a;
+}
+.scroll-top:active {
+  background-color: #e6919b;
 }
