@@ -1,0 +1,23 @@
+# Configuración general
+.DS_Store
+Thumbs.db
+
+# Archivos del sistema/IDE
+.vscode/
+.idea/
+
+# Archivos temporales
+*.log
+*.tmp
+*.swp
+
+# Archivos de caché de Prettier
+.prettierignore
+prettierrc.json
+
+# Archivos de entorno o configuración local
+.env
+.env.local
+*.local
+*.bak
+*.old
