@@ -30,6 +30,16 @@
             height="48"
             alt="Caro Arias"
           />
+          <div class="switch">
+            <input
+              id="language-toggle"
+              class="js-language-toggle check-toggle check-toggle-round-flat"
+              type="checkbox"
+            />
+            <label for="language-toggle"></label>
+            <span class="text-uppercase on">es</span>
+            <span class="text-uppercase off">en</span>
+          </div>
         </div>
       </nav>
       <!-- HERO SECTION -->
@@ -70,13 +80,23 @@
                   Mi enfoque combina creatividad, detalle y empatía para aportar
                   soluciones web centradas en el usuario.
                 </p>
-                <button
-                  class="js-hero-cta hero__button button"
-                  type="button"
-                  data-translate="heroButton"
-                >
-                  Construyamos algo juntos
-                </button>
+                <div class="hero__ctas">
+                  <button
+                    class="js-hero-cta hero__button button button--primary mb-3 mb-md-0 me-md-3"
+                    type="button"
+                    data-translate="heroButton"
+                  >
+                    Construyamos juntos
+                  </button>
+                  <a
+                    href="CV_CarolinaArias_ES.pdf"
+                    download="CV_CarolinaArias_ES.pdf"
+                    class="js-download-cv button button--secondary"
+                  >
+                    <i class="fa-solid fa-download"></i>
+                    <span data-translate="cvButton">Descargar CV</span>
+                  </a>
+                </div>
               </div>
             </div>
             <div class="col-lg-6 d-flex align-items-end align-items-lg-center">
@@ -640,7 +660,7 @@
             </div>
 
             <button
-              class="button"
+              class="button button--secondary"
               type="submit"
               data-translate="contactButtonSend"
             >
@@ -687,31 +707,33 @@
                   href="https://api.whatsapp.com/send?phone=50685825355"
                   target="_blank"
                   rel="noopener noreferrer"
-                  ><img src="assets/whatsapp.svg" width="24" height="24" alt=""
-                /></a>
+                  ><i class="footer__social-icon fa-brands fa-whatsapp"></i
+                ></a>
               </div>
               <div class="footer__social">
                 <a
                   href="https://github.com/carias03"
                   target="_blank"
                   rel="noopener noreferrer"
-                  ><img src="assets/github.svg" width="24" height="24" alt=""
-                /></a>
+                  ><i class="footer__social-icon fa-brands fa-github"></i
+                ></a>
               </div>
               <div class="footer__social">
                 <a
                   href="https://www.linkedin.com/in/caroarijime/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  ><img src="assets/linkedin.svg" width="24" height="24" alt=""
-                /></a>
+                  ><i class="footer__social-icon fa-brands fa-linkedin"></i
+                ></a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </footer>
-    <button class="js-scroll-top scroll-top" title="Volver arriba">↑</button>
+    <button class="js-scroll-top scroll-top" type="button">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
   </body>
   <script
     src="https://kit.fontawesome.com/123b57cfb9.js"
