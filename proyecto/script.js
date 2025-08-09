@@ -206,6 +206,8 @@ const translations = {
       "Con una base sólida en ingeniería del software y una mirada analítica forjada en la ciencia, transformo ideas en interfaces funcionales, accesibles y visualmente atractivas. Mi enfoque combina creatividad, detalle y empatía para aportar soluciones web centradas en el usuario.",
     heroButton: "Construyamos algo juntos",
     projectsHeadline: "Lo que he creado",
+    projectsSubheadline:
+      "Proyectos que reflejan mi pasión por el desarrollo y el diseño centrado en el usuario.",
     hivefitSubtitle:
       "Gestión de tu centro fitness con tecnología intuitiva y eficiente",
     hivefitFeaturesTitle: "Funcionalidades:",
@@ -226,6 +228,8 @@ const translations = {
     sicaFeature2: "Reportes personalizados",
     sicaFeature3: "Roles de usuario",
     skillsHeadline: "Lo que aporto a mi equipo",
+    skillsSubheadline:
+      "Habilidades técnicas, blandas y valores que potencian la colaboración y la excelencia.",
     skillsTechnical: "Habilidades Técnicas",
     skillsSoft: "Habilidades Blandas",
     skillsValues: "Valores",
@@ -267,10 +271,14 @@ const translations = {
     experienceCardText5:
       "Traducción fiel de prototipos y diseños en experiencias interactivas funcionales.",
     statsHeadline: "Lo que dicen los números",
+    statsSubheadline:
+      "Datos concretos que respaldan mi experiencia y crecimiento profesional.",
     statsText0: "años creando soluciones digitales efectivas",
     statsText1: "implementaciones en interfaces web",
     statsText2: "tecnologías y herramientas a tu servicio",
     contactHeadline: "Tu próximo proyecto comienza aquí",
+    contactSubheadline:
+      "Estoy lista para transformar tus ideas en soluciones digitales efectivas.",
     contactLabelName: "Nombre",
     contactLabelEmail: "Correo electrónico",
     contactLabelMessage: "Mensaje",
@@ -287,6 +295,8 @@ const translations = {
       "With a solid foundation in software engineering and an analytical mindset forged in science, I transform ideas into functional, accessible, and visually appealing interfaces. My approach combines creativity, attention to detail, and empathy to deliver user-centered web solutions.",
     heroButton: "Let's build something together",
     projectsHeadline: "What I've created",
+    projectsSubheadline:
+      "Projects that reflect my passion for development and user-centered design.",
     hivefitSubtitle:
       "Manage your fitness center with intuitive and efficient technology",
     hivefitFeaturesTitle: "Features:",
@@ -307,6 +317,8 @@ const translations = {
     sicaFeature2: "Custom reports",
     sicaFeature3: "User roles",
     skillsHeadline: "What I bring to my team",
+    skillsSubheadline:
+      "Technical skills and values that enhance collaboration and excellence.",
     skillsTechnical: "Technical Skills",
     skillsSoft: "Soft Skills",
     skillsValues: "Values",
@@ -348,10 +360,14 @@ const translations = {
     experienceCardText5:
       "Faithful translation of prototypes and designs into functional interactive experiences.",
     statsHeadline: "What the numbers say",
+    statsSubheadline:
+      "Concrete data that support my experience and professional growth.",
     statsText0: "years creating effective digital solutions",
     statsText1: "implementations in web interfaces",
     statsText2: "technologies and tools at your service",
     contactHeadline: "Your next project starts here",
+    contactSubheadline:
+      "I'm ready to turn your ideas into effective digital solutions.",
     contactLabelName: "Name",
     contactLabelEmail: "Email",
     contactLabelMessage: "Message",
