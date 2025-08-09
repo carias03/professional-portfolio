@@ -139,13 +139,13 @@ function formValidation() {
     let error = null;
 
     switch (input.name) {
-      case "contact-name":
+      case "contactName":
         error = validateName(value);
         break;
-      case "contact-email":
+      case "contactEmail":
         error = validateEmail(value);
         break;
-      case "contact-message":
+      case "contactMessage":
         error = validateMessage(value);
         break;
     }
@@ -165,7 +165,7 @@ function formValidation() {
     return !error;
   }
 
-  function validateForm(form) {
+  function validateForm() {
     let isValid = true;
     inputs.forEach((input) => {
       const valid = validateField(input);
@@ -182,12 +182,14 @@ function formValidation() {
   });
 
   function formOnSubmit(form) {
-    const formData = new FormData(form);
-    const dataObject = Object.fromEntries(formData.entries());
+    const successModal = new bootstrap.Modal(
+      document.getElementById("success-modal")
+    );
 
     emailjs.sendForm("service_cariasj", "contact_me_portfolio", form).then(
       () => {
         form.reset();
+        successModal.show();
       },
       (error) => {
         console.log("Error al enviar el mensaje: " + JSON.stringify(error));
