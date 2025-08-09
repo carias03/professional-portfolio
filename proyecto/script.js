@@ -165,7 +165,7 @@ function formValidation() {
     return !error;
   }
 
-  function validateForm() {
+  function validateForm(form) {
     let isValid = true;
     inputs.forEach((input) => {
       const valid = validateField(input);
@@ -181,11 +181,25 @@ function formValidation() {
     );
   });
 
+  function formOnSubmit(form) {
+    const formData = new FormData(form);
+    const dataObject = Object.fromEntries(formData.entries());
+
+    emailjs.sendForm("service_cariasj", "contact_me_portfolio", form).then(
+      () => {
+        form.reset();
+      },
+      (error) => {
+        console.log("Error al enviar el mensaje: " + JSON.stringify(error));
+      }
+    );
+  }
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     const isValid = validateForm();
     if (isValid) {
-      form.reset();
+      formOnSubmit(form);
       inputs.forEach((input) => {
         const errorElement = input.parentElement.querySelector(".js-error");
         input.classList.remove("error");
